@@ -9,7 +9,7 @@ if(consulta === "comprar"){
     dolar()
 }else if(consulta === "vender"){
     venderUsd()
-}else{}
+}
 }
 
 const dolar = () => {
@@ -20,7 +20,7 @@ const dolar = () => {
             alert("El monto minimo es 500 USD")
         }else if(cantidad >10000){
             alert("Ese monto no esta disponible")
-        }else{}
+        }
         cantidad = Number(prompt("¿Cuanto quiere comprar?")) 
     }
     alert(`El total seria ${cantidad * 550} pesos`)
@@ -55,7 +55,7 @@ const venderUsd = () => {
             alert("El monto minimo es 500 USD")
         }else if(cantidad >10000){
             alert("Ese monto es muy elevado")
-        }else{}
+        }
         cantidad = Number(prompt("¿Cuanto quiere vender?")) 
     }
     alert(`Recibira un total de ${cantidad * 520} pesos`)
