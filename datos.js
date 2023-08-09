@@ -6,6 +6,8 @@ let dni = prompt("Ingrese su dni")
 let moneda = prompt("Ingrese que moneda quiere comprar").toUpperCase()
 let cantidad = Number(prompt("Ingrese que cantidad quiere comprar"))
 
+//estos datos van a ser todos ingresados mediante inputs cuando sea lo requerido avanzar con eso en las preentregas
+
 class Datos {
     constructor(nombre, apellidos, dni, moneda, cantidad, id){
         this.nombre = nombre;
