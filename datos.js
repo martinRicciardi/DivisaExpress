@@ -1,30 +1,26 @@
-const datos = [];
+let storage = JSON.parse(localStorage.getItem("datos"))
+let card = document.getElementById("card-container")
 
-let nombre = prompt("Ingrese su nombre")
-let apellido = prompt("Ingrese su apellido")
-let dni = prompt("Ingrese su dni")
-let moneda = prompt("Ingrese que moneda quiere comprar").toUpperCase()
-let cantidad = Number(prompt("Ingrese que cantidad quiere comprar"))
+storage.forEach(item => {
+    let div = document.createElement("div")
 
-//estos datos van a ser todos ingresados mediante inputs cuando sea lo requerido avanzar con eso en las preentregas
+    div.innerHTML = 
+    `<p>Nombre: ${item.nombre}</p>
+    <p>Apellido: ${item.apellidos}</p>
+    <p>DNI: ${item.dni}</p>
+    <p>Moneda: ${item.moneda}</p>
+    <p>Cantidad: ${item.cantidad}</p>
+    <p>ID de transaccion: #${item.id}</p>
+    <button id="boton">Eliminar</button>
+    <br>`
 
-class Datos {
-    constructor(nombre, apellidos, dni, moneda, cantidad, id){
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.dni = dni;
-        this.moneda = moneda;
-        this.cantidad = cantidad;
-        this.id = id;
-        this.validado = false;
-    }
-    validar(){
-        this.validado = true
-    }
+    card.append(div)
+});
+
+let boton = document.getElementById("boton")
+
+const borrar = () => {
+    localStorage.removeItem("datos")
+    window.location.reload()
 }
-
-let id = Math.round(Math.random() * 1000000)
-
-datos.push(new Datos(nombre, apellido, dni, moneda, cantidad, id))
-
-datos.forEach((item) => {alert(`Datos del comprador: Nombre: ${item.nombre} Apellido: ${item.apellidos} DNI: ${item.dni} Moneda: ${item.moneda} Cantidad: ${item.cantidad} Validado: ${item.validado} ID de transaccion: #${item.id}`)})
+boton.addEventListener("click", () => borrar())
