@@ -1,26 +1,38 @@
-let storage = JSON.parse(localStorage.getItem("datos"))
-let card = document.getElementById("card-container")
+let compra = JSON.parse(localStorage.getItem("compra"))
+let venta = JSON.parse(localStorage.getItem("venta"))
+let cardcom = document.getElementById("card-compra")
+let cardven = document.getElementById("card-venta")
 
-storage.forEach(item => {
+const cards = (item, card) => {
     let div = document.createElement("div")
 
     div.innerHTML = 
     `<p>Nombre: ${item.nombre}</p>
     <p>Apellido: ${item.apellidos}</p>
     <p>DNI: ${item.dni}</p>
+    <p>Telefono: ${item.telefono}</p>
+    <p>Email: ${item.email}</p>
     <p>Moneda: ${item.moneda}</p>
     <p>Cantidad: ${item.cantidad}</p>
     <p>ID de transaccion: #${item.id}</p>
-    <button id="boton">Eliminar</button>
     <br>`
 
     card.append(div)
-});
-
-let boton = document.getElementById("boton")
-
-const borrar = () => {
-    localStorage.removeItem("datos")
-    window.location.reload()
 }
-boton.addEventListener("click", () => borrar())
+
+if(venta){
+venta.forEach(item => {
+    cards(item, cardven)
+});
+compra.forEach(item => {
+    cards(item, cardcom)
+});}
+else if(compra){
+compra.forEach(item => {
+    cards(item, cardcom)
+});
+venta.forEach(item => {
+    cards(item, cardven)
+});
+}
+

@@ -14,12 +14,36 @@
         <a href="./datos.html">Datos</a>
     </div>
     <div>
-        <form id="formulario">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellido">
-            <input type="text" placeholder="DNI">
-            <input type="text" placeholder="Moneda">
-            <input type="number" placeholder="Cantidad">
+        <h2>COMPRAR</h2>
+        <form id="formulario-compra">
+            <input id="nom" type="text" placeholder="Nombre">
+            <input id="ape" type="text" placeholder="Apellido">
+            <input id="dni" type="text" placeholder="DNI">
+            <input id="num" type="text" placeholder="Telefono (Incluir cod. de area)">
+            <input id="email" type="email" placeholder="Email">
+            <select name="moneda" id="mon">
+                <option value="">Elija una moneda</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="BRZ">BRZ</option>
+            </select>
+            <input id="cant" type="number" placeholder="Cantidad">
+            <input type="submit" value="Enviar">
+        </form>
+        <h2>VENDER</h2>
+        <form id="formulario-vender">
+            <input id="nom" type="text" placeholder="Nombre">
+            <input id="ape" type="text" placeholder="Apellido">
+            <input id="dni" type="text" placeholder="DNI">
+            <input id="num" type="text" placeholder="Telefono (Incluir cod. de area)">
+            <input id="email" type="email" placeholder="Email">
+            <select name="moneda" id="mon">
+                <option value="">Elija una moneda</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="BRZ">BRZ</option>
+            </select>
+            <input id="cant" type="number" placeholder="Cantidad">
             <input type="submit" value="Enviar">
         </form>
     </div>
