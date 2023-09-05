@@ -1,75 +1,28 @@
-const inicio = () => {  
-let consulta = prompt("Quiere comprar o vender")
+let cotizaciones = document.getElementById("cotizaciones")
 
-while(consulta !== "comprar" && consulta !== "vender"){
-    alert("Esa opcion no esta disponible")
-    consulta = prompt("Quiere comprar o vender")
-}
-if(consulta === "comprar"){
-    dolar()
-}else if(consulta === "vender"){
-    venderUsd()
-}
-}
+const pedirValores = async() => {
+    try{
+        const res_usd = await fetch("https://v6.exchangerate-api.com/v6/a713bfd46e59638c3a057e1c/latest/USD");
+        const data_usd = await res_usd.json()
+        const res_eur = await fetch("https://v6.exchangerate-api.com/v6/a713bfd46e59638c3a057e1c/latest/EUR");
+        const data_eur = await res_eur.json()
+        const res_brl = await fetch("https://v6.exchangerate-api.com/v6/a713bfd46e59638c3a057e1c/latest/BRL");
+        const data_brl = await res_brl.json()
 
-const dolar = () => {
-    let cantidad = Number(prompt("¿Cuanto quiere comprar?"))
+        const euroBlue = Math.round(data_eur.conversion_rates.ARS * 1.02 + data_eur.conversion_rates.ARS)
+        const dolarBlue = Math.round(data_usd.conversion_rates.ARS * 1.08 + data_usd.conversion_rates.ARS)
+        const realBlue = Math.round(data_brl.conversion_rates.ARS * 0.37 + data_brl.conversion_rates.ARS)
 
-    while(cantidad <500 || cantidad >10000){
-        if(cantidad <500){
-            alert("El monto minimo es 500 USD")
-        }else if(cantidad >10000){
-            alert("Ese monto no esta disponible")
-        }
-        cantidad = Number(prompt("¿Cuanto quiere comprar?")) 
+        const div = document.createElement("div")
+        div.innerHTML = `<p>Dolar ${dolarBlue}</p>
+        <p>Euro ${euroBlue}</p>
+        <p>Real ${realBlue}</p>`
+
+        cotizaciones.append(div)
+
+    }catch(error){
+        console.log(error);
     }
-    alert(`El total seria ${cantidad * 550} pesos`)
-    dni()
 }
 
-// const euro = () => {
-//     let cantidad = Number(prompt("¿Cuanto quiere comprar?"))
-
-//     while(cantidad <400 || cantidad >8000){
-//         switch(cantidad){
-//             case cantidad < 400:
-//                 alert("El monto minimo es 400 Euros");
-//                 break;
-//             case cantidad > 8000:
-//                 alert("Ese monto no esta disponible");
-//                 break;
-//             default:
-//                 break;
-//         }
-//         cantidad = Number(prompt("¿Cuanto quiere comprar?"))
-//     }
-//     alert(`El total seria ${cantidad * 290} pesos`)
-//     dni()
-// }
-
-const venderUsd = () => {
-    let cantidad = Number(prompt("¿Cuanto quiere vender?"))
-
-    while(cantidad <500 || cantidad >10000){
-        if(cantidad <500){
-            alert("El monto minimo es 500 USD")
-        }else if(cantidad >10000){
-            alert("Ese monto es muy elevado")
-        }
-        cantidad = Number(prompt("¿Cuanto quiere vender?")) 
-    }
-    alert(`Recibira un total de ${cantidad * 520} pesos`)
-    dni()
-} 
-
-const dni = () => {
-let numDni = Number(prompt("Ingrese su numero de dni para finalizar la transaccion"))
-
-    while(numDni < 9000000){
-        alert("ingrese un dni valido")
-        numDni = Number(prompt("Ingrese su numero de dni para finalizar la transaccion"))
-    }
-    alert("Gracias por la transaccion")
-} 
-
-inicio()
+pedirValores()
