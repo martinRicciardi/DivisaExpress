@@ -3,24 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos de transaccion</title>
+    <title>DIVISA EXPRESS</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&family=Play&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Datos de transaccion</h1>
     <div class="navbar">
-        <a href="./index.html">Inicio</a>
-        <a href="./compra.html">Compra</a>
-        <a href="#">Datos</a>
+        <div>
+            <h1>DIVISA EXPRESS</h1>
+        </div>
+        <div>
+            <a href="./index.html">Inicio</a>
+            <a href="./compra.html">Compra y venta</a>
+            <a href="#">Transacciones</a>
+        </div>
     </div>
-    <h2>TRANSACCIONES</h2>
-    <hr>
-    <h3>COMPRA</h3>
-    <div id="card-compra">
+    <div class="transacciones-main">
+        <div class="transparencia-trans">
+            <h2 class="titulo-transacciones">TRANSACCIONES</h2>
+            <p class="texto-transacciones">Nos comunicaremos con usted en la brevedad</p>
+            <div id="trans-container">
+                <div class="card-container">
+                    <h3>COMPRA</h3>
+                    <div id="card-compra">
+                        <button id="eliminar-compra">ELIMINAR COMPRAS</button>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <h3>VENTA</h3>
+                    <div id="card-venta">
+                        <button id="eliminar-venta">ELIMINAR VENTAS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <h3>VENTA</h3>
-    <div id="card-venta">
-    </div>
+    <footer>
+        <p>Copyright © 2023 Martin Ricciardi. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./datos.js"></script>
 </body>
 </html>

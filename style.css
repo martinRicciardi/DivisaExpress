@@ -3,24 +3,428 @@
     margin: 0%;
 }
 
-/* input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer; 
-} */
-
-h1{
+.navbar h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family:'Play', sans-serif;
+    font-size: 3rem;
+    margin-left: 2vw;
+    color: #fff;
 }
 
 .navbar {
     display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 9vh;
+    background-color: #0e4d81;
+}
+
+a{
+    margin-right: 2vw;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    font-family:'Bebas Neue', sans-serif;
+    font-size: x-large;
+}
+
+footer{
+    height: 8vh;
+    width: 100%;
+    background-color: #0e4d81;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p{
+    font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+/* //////////INICIO////////// */
+.bienvenida{
+    background-image: url("./images/billie-dolar-fondo-dinero.jpg") ;
+    background-size: cover;
+    height: 91vh;
+    display: flex;
+    align-items: center;
+}
+
+.bienvenida div{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right,#011a2e 25%, rgba(255, 255, 255, 0));
+    opacity: 0.98;
+}
+
+.bienvenida div h1{
+    margin-top: 10vh;
+    margin-left: 2vw;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    font-weight: 100;
+    line-height: 17vh;
+    color: #dbdbdb;
+}
+.bienvenida div h2{
+    margin-top: 38vh;
+    margin-right: 5vw;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    color: #dbdbdb;
+    text-align: center;
+}
+
+.inicio img{
+    height: 90.3vh;
+    width: 100%;
+}
+
+.cotizaciones{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+}
+
+#container-cotizaciones{
+    height: 40vh;
+    width: 100%;
+    background-color: #02223b;
+}
+
+#container-cotizaciones p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-cotizacion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 20vh;
+    width: 13vw;
+    background-color:rgba(158, 157, 157, 0.226) ;
+    border-radius: 5px;
+}
+
+.card-cotizacion h1{
+    margin-left: 0%;
+    margin-bottom: 1vh;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+}
+
+.info-cotizaciones{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info-compra{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 1vh;
+}
+
+.info-compra p{
+    font-size: xx-large;
+    margin-bottom: 1vh;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #0f5a94;;
+}
+
+.info-compra h3{
+    color: #1370bd;
+}
+
+.info-venta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 1vh;
+}
+
+.info-venta p{
+    font-size: xx-large;
+    margin-bottom: 1vh;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #0f5a94;
+}
+
+.info-venta h3{
+    color:  #1370bd;
 }
 
 
+
+/* //////////COMPRA Y VENTA////////// */
+.comprayventa{
+    background-image: url("./images/dar-dinero-estados-unidos-dolares-usd.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 83vh;
+    background-position-y: 30%;
+}
+.transparencia{
+    width: 100%;
+    height: 83vh;
+    background-color:#011a2e8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 65vh;
+    width: 25vw;
+    background-color:#011a2ebe;
+    border-radius: 5px;
+}
+
+.container p{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 1vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    margin-top: 0.5vh;
+    border-radius: 5px;
+    border-color: #2989D8;
+    border-width: 2px;
+    background-color: #ffffff49;
+    height: 5vh;
+    width: 20vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-size: medium;
+    padding-left: 20px;
+    animation-name: inputsanim;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+}::placeholder{
+    color: #fff;
+}
+
+select{
+    margin-top: 0.5vh;
+    border-radius: 5px;
+    border-color: #2989D8;
+    border-width: 2px;
+    background-color: #ffffff49;
+    color: #fff;
+    height: 6vh;
+    width: 21.3vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    padding-left: 20px;
+    animation-name: inputsanim;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    border-top-color: rgb(25, 83, 132);
+    border-left-color: rgb(25, 83, 132);
+}
+select option {
+    background-color: #011a2e;
+}
+
+#titulo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:xx-large;
+    color: #fff;
+}
+
+#comprar_boton{
+    background-color: #2989D8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer; 
+    margin-bottom: 1vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+#vender_boton{
+    background-color: #2989D8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer; 
+    margin-bottom: 1vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+input[type="submit"] {
+    background-color: #2989D8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor:pointer; 
+    margin-top: 3vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+@keyframes inputsanim {
+    0% {height: 1vh; width: 0vw; align-self: center;}
+    25% {height: 2vh; width: 5vw; align-self: center;}
+    50% {height: 3vh; width: 10vw; align-self: center;}
+    75% {height: 4vh; width: 15vw; align-self: center;}
+    100% {height: 5vh; width: 20vw; align-self: center;}
+}
+
+input[type="submit"]:hover{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px; 
+    transition: all 1s;
+}
+
+/* //////////TRANSACCIONES////////// */
+
+.titulo-transacciones{
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: 4rem;
+}
+
+.transacciones-main{
+    background-image: url("./images/billie-dolar.jpg");
+    min-height: 83vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.transparencia-trans{
+    width: 100%;
+    min-height: 83vh;
+    background-color:#011a2e8f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trans-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container h3{
+    text-align: center;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+}
+
+.card-datos{
+    min-height: 22vh;
+    min-width: 15vw;
+    background-color: #ffffff49;
+    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 2.5vh;
+    font-weight: 400;
+    margin-bottom: 2vh;
+}
+
+.nohay{
+    color: #fff;
+    font-size: 4rem;
+    margin-top: 15rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.texto-transacciones{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+}
+
+#eliminar-compra{
+    background-color: #e7eaec;
+    color: #070707;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer; 
+    margin-bottom: 1vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+#eliminar-venta{
+    background-color: #e7eaec;
+    color: #070707;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer; 
+    margin-bottom: 1vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+#card-compra{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#card-venta{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

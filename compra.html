@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra y venta</title>
+    <title>DIVISA EXPRESS</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&family=Play&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Compra y venta</h1>
     <div class="navbar">
-        <a href="./index.html">Inicio</a>
-        <a href="#">Compra</a>
-        <a href="./datos.html">Datos</a>
+        <div>
+            <h1>DIVISA EXPRESS</h1>
+        </div>
+        <div>
+            <a href="./index.html">Inicio</a>
+            <a href="#">Compra y venta</a>
+            <a href="./datos.html">Transacciones</a>
+        </div>
     </div>
-    <div>
-        <h2>COMPRAR</h2>
-        <form id="formulario-compra">
-            <input id="nom" type="text" placeholder="Nombre">
-            <input id="ape" type="text" placeholder="Apellido">
-            <input id="dni" type="text" placeholder="DNI">
-            <input id="num" type="text" placeholder="Telefono (Incluir cod. de area)">
-            <input id="email" type="email" placeholder="Email">
-            <select name="moneda" id="mon">
-                <option value="">Elija una moneda</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="BRZ">BRZ</option>
-            </select>
-            <input id="cant" type="number" placeholder="Cantidad">
-            <input type="submit" value="Enviar">
-        </form>
-        <h2>VENDER</h2>
-        <form id="formulario-vender">
-            <input id="nom" type="text" placeholder="Nombre">
-            <input id="ape" type="text" placeholder="Apellido">
-            <input id="dni" type="text" placeholder="DNI">
-            <input id="num" type="text" placeholder="Telefono (Incluir cod. de area)">
-            <input id="email" type="email" placeholder="Email">
-            <select name="moneda" id="mon">
-                <option value="">Elija una moneda</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="BRZ">BRZ</option>
-            </select>
-            <input id="cant" type="number" placeholder="Cantidad">
-            <input type="submit" value="Enviar">
-        </form>
+    <div class="comprayventa">
+        <div class="transparencia">
+            <div class="container">
+                <button id="comprar_boton" style="display: none;">Comprar</button>
+                <button id="vender_boton" style="display: block;">Vender</button>
+                <h2 id="titulo">COMPRAR</h2>
+                <form id="formulario_compra" class="form" style="display: flex;" autocomplete="off">
+                    <input id="nom" type="text" class="input" placeholder="Nombre">
+                    <input id="ape" type="text" class="input" placeholder="Apellido">
+                    <input id="dni" type="text" class="input" placeholder="DNI">
+                    <input id="num" type="text" class="input" placeholder="Telefono (Incluir cod. de area)">
+                    <input id="email" type="email" class="input" placeholder="Email">
+                    <select name="moneda" id="mon">
+                        <option value="">Elija una moneda</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="BRZ">BRZ</option>
+                    </select>
+                    <input id="cant" type="number" class="input" placeholder="Cantidad">
+                    <input type="submit" value="Enviar">
+                </form>
+                <form id="formulario_vender" class="form" style="display: none;" autocomplete="off">
+                    <input id="nom" type="text" class="input" placeholder="Nombre">
+                    <input id="ape" type="text" class="input" placeholder="Apellido">
+                    <input id="dni" type="text" class="input" placeholder="DNI">
+                    <input id="num" type="text" class="input" placeholder="Telefono (Incluir cod. de area)">
+                    <input id="email" type="email" class="input" placeholder="Email">
+                    <select name="moneda" id="mon">
+                        <option value="">Elija una moneda</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="BRZ">BRZ</option>
+                    </select>
+                    <input id="cant" type="number" class="input" placeholder="Cantidad">
+                    <input type="submit" value="Enviar">
+                </form>
+                <p>Por favor, coloque sus datos correctamente, ya que nos estaremos comunicando con usted.</p>
+            </div>
+        </div>
     </div>
+    <footer>
+        <p>Copyright © 2023 Martin Ricciardi. Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./compraventa.js"></script>
 </body>
 </html>
