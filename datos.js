@@ -3,41 +3,6 @@ let venta = JSON.parse(localStorage.getItem("venta"))
 let cardcom = document.getElementById("card-compra")
 let cardven = document.getElementById("card-venta")
 let noHay = document.getElementById("trans-container")
-let borrarCompras = document.getElementById("eliminar-compra")
-let borrarVentas = document.getElementById("eliminar-venta")
-
-borrarCompras.addEventListener("click", () => {
-    Swal.fire({
-        title: 'Borrar compras',
-        text: "¿Estas seguro de eliminar tus compras?",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Borrar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            localStorage.removeItem("compra")
-            location.reload()
-        }
-    })
-})
-borrarVentas.addEventListener("click", () => {
-    Swal.fire({
-        title: 'Borrar ventas',
-        text: "¿Estas seguro de eliminar tus ventas?",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Borrar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            localStorage.removeItem("venta")
-            location.reload()
-        }
-    })
-})
 
 const cards = (item, card) => {
     let div = document.createElement("div")
@@ -52,26 +17,55 @@ const cards = (item, card) => {
         <p>MONEDA: ${item.moneda}</p>
         <p>CANTIDAD: ${item.cantidad}</p>
         <p>ID DE TRANSACCION: #${item.id}</p>
+        <button id="${item.id}">ELIMINAR</button>
     </div>`
 
     card.append(div)
+
+    let botonBorrar = document.getElementById(item.id)
+    botonBorrar.addEventListener("click", () => {
+        Swal.fire({
+            title: 'Borrar transaccion',
+            text: "¿Estas seguro de eliminar tu transaccion?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Borrar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                for (let i = 0; i < localStorage.length; i++) {
+                    let claves = localStorage.key(i);
+                    let allObj = JSON.parse(localStorage.getItem(claves))
+                    let objGuard = allObj.filter(e => e.id != item.id)
+                    localStorage.setItem(claves, JSON.stringify(objGuard))
+                    location.reload()
+                }
+            }
+        })
+    })
 }
 
 const crearCards = () => {
-    if(venta){
-venta.forEach(item => {
-    cards(item, cardven)
-});
-compra.forEach(item => {
-    cards(item, cardcom)
-});}
-else if(compra){
-compra.forEach(item => {
-    cards(item, cardcom)
-});
-venta.forEach(item => {
-    cards(item, cardven)
-});
+    if(venta.length === 0 && compra.length === 0){
+        localStorage.clear()
+        location.reload()
+    }else {
+        if(venta){
+            venta.forEach(item => {
+            cards(item, cardven)
+        });
+            compra.forEach(item => {
+            cards(item, cardcom)
+        });}
+        else if(compra){
+            compra.forEach(item => {
+            cards(item, cardcom)
+        });
+            venta.forEach(item => {
+            cards(item, cardven)
+        });
+    }
 }
 }
 
